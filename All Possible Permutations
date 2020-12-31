@@ -1,0 +1,29 @@
+"""
+You are given a simple task, given a string S, find all the possible permutations of the string.
+Print all the permutations of the string S, one on each line and in lexicographic order.
+
+Input Format
+Only one string S.
+
+Constraints
+1 <= S.length <= 8
+
+Output Format
+Print all the possible permutations of the given string in lexicographic order.
+
+Sample Input 0
+ABC
+Sample Output 0
+ABC
+ACB
+BAC
+BCA
+CAB
+CBA
+__________________________________________________________________"""
+import itertools
+s = input()
+r= ''.join(sorted(s))
+p=(''.join(a) for a in itertools.permutations(r)) 
+for x in p: 
+    print(x)
