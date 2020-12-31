@@ -1,0 +1,31 @@
+"""
+Given a positive integer, return its corresponding column title as it would appear in an Excel Spreadsheet.
+For Example :
+1 -> A
+2 -> B
+....
+....
+26 -> Z
+27 -> AA
+
+Input Format
+One integer denoting the column number.
+
+Constraints
+The integer size will be less than 32-bits.
+
+Output Format
+Output the corresponding column title.
+
+Sample Input 0
+27
+Sample Output 0
+AA
+__________________________________________________________________"""
+n=int(input())
+s=""
+while (n>0):
+    i=(n-1) % 26
+    s+=chr(i+ord('A'))
+    n=(n - 1)//26
+print(s[::-1])
