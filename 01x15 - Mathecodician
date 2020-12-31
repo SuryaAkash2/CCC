@@ -1,0 +1,38 @@
+"""
+Combining Mathematics and Computer Science one can achieve unbelievable results in various fields. Here you are to solve a basic Math problem using Computer Science.
+You are to write a program to find the least non-negative integer X such that A.X.X + B.X + C >= K where A, B, C and K are inputs.
+Do the same for multiple test cases.
+
+INPUT
+The first line contains the number of test cases T. Next T lines each contain a test case. Each test case consists of 4 space-separated numbers A, B, C and K in that order.
+
+OUTPUT
+Output the answer to each test case in a new line.
+
+Sample Input 0
+3
+3 4 5 6
+3 4 5 5
+3 4 5 150
+Sample Output 0
+1
+0
+7
+__________________________________________________________________"""
+def Min(a, b, c, k): 
+    x=10**9  
+    if(k<=c): return 0
+    h=k-c 
+    l=0
+    while(l<=h): 
+        m=(l+h)//2
+        if ((a*m**2)+(b*m)>(k-c)): 
+            x=min(x,m) 
+            h=m-1
+        elif((a*m*m)+(b*m)<(k-c)): l=m+1
+        else: return m 
+    return x 
+n=int(input())
+for i in range(n):
+    a,b,c,k=list(map(int,input().strip().split(' ')))
+    print(Min(a,b,c,k)) 
