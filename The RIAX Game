@@ -1,0 +1,35 @@
+"""
+Gru got some numbers with him to the dance club to watch his daughters perform. The numbers were N while he got them to the club, 
+the numbers are gru's numbers so the disintegrate into two equal halves every second, if the number is odd, 
+it breaks into two equal parts and leaves one "RIAX" everytime it breaks. i.e. 5 will break into 2,2 and 1 riax 
+They stop breaking once they're 0 and they vanish Say that the dance is suffienctly long enough so that all numbers break off and vanish
+You look at the riaxs that lie with you now, can you count them knowing the initial numbers?
+
+NOTE : If a number breaks into two numbers, one of those numbers will disappear unless it is one. 
+For example : 2 breaks into 1 and 1 giving two RIAX. 5 breaks into 2,2 giving 1 RIAX. However, one 2 will disappear and only one 2 will remain.
+
+Input Format
+First line contains N , the number of Numbers Gru took to the party. Next line contains N integers ai the numbers
+
+Constraints
+1<= N <= 10^5
+1<= ai <= 10^5
+Output Format
+Print a single integer ,the riaxs collected
+
+Sample Input 0
+6
+1 2 3 1 2 3
+Sample Output 0
+12
+__________________________________________________________________"""
+n=int(input()) 
+l,s=[],0
+l=list(map(int,input().split()))
+for i in l:
+    if(i==1): s+=1
+    elif(i==2): s+=2
+    elif(i%2==0 and i%4==0 and i%3!=0): s+=2
+    elif(i%3==0 or i%5==0): s+=3
+    else: s+=4
+print(s)
