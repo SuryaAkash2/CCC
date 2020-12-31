@@ -1,0 +1,20 @@
+"""
+Given a string consisting of lowercase english letters only, print all the unique characters in it in lexicographically increasing order.
+
+Input Format
+One string S.
+
+Constraints
+1 <= strlen(S) <= 1000
+
+Output Format
+One string consisting of the unique characters of string S in alphabetic order.
+
+Sample Input 0
+alohamora
+Sample Output 0
+ahlmor
+__________________________________________________________________"""
+s=input()
+for i in sorted(set(s)):
+    print(i,end="")
