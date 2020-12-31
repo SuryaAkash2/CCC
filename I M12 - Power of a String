@@ -1,0 +1,34 @@
+"""
+Power of string is the sum of square of frequency of different letters in the string. Given string only consists of lowercase English letters. 
+Your task is to find the power of string.
+
+Input Format
+First line contains an integer for the number of test case. Each test case consists of length of the input string and the string.
+
+Constraints
+1 <= t <= 10. Input size of string length over all the test cases doesn't exceed 100000.
+
+Output Format
+For each test case print the power of string in a new line.
+
+Sample Input 0
+1
+5
+aabbc
+Sample Output 0
+9
+__________________________________________________________________"""
+for i in range(int(input())):
+    n=int(input())
+    s=input()
+    if(len(s)==n):
+        d = {}
+        b=0
+        for i in s:
+            if i in d: d[i] += 1
+            else: d[i] = 1
+        for i in s:
+            if d[i] != 0:
+                b = b+ (d[i]*d[i])
+                d[i] = 0
+        print(b)
