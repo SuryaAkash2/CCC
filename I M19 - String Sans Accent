@@ -1,0 +1,22 @@
+"""
+There's a Bug who loves strings but hates vowels. He wants to delete all the vowels from a string. Can you do it for him?
+Input Format
+One line of input that contains the string S.
+
+Constraints
+1 <= |S| <= 10^5
+
+Output Format
+One string, the string S without vowels.
+
+Sample Input 0
+bugshatesvowels
+Sample Output 0
+bgshtsvwls
+__________________________________________________________________"""
+s=input()
+v = ('a','e','i','o','u')  
+for x in s.lower(): 
+    if x in v: 
+        s = s.replace(x,"")
+print(s)
