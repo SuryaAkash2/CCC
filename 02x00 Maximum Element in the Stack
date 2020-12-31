@@ -1,0 +1,38 @@
+"""
+https://s3.amazonaws.com/hr-assets/0/1497841199-848663fc13-Capture.PNG
+
+Input Format
+https://s3.amazonaws.com/hr-assets/0/1497841206-40172c8005-if.PNG
+
+Constraints
+https://s3.amazonaws.com/hr-assets/0/1497841216-7a8ae3c036-ic.PNG
+
+Output Format
+https://s3.amazonaws.com/hr-assets/0/1497841228-9ff9147d86-out.PNG
+
+Sample Input 0
+10
+1 97
+2
+1 20
+2
+1 26
+1 20
+2
+3
+1 91
+3
+Sample Output 0
+26
+91
+__________________________________________________________________________________________________________________________________"""
+N=int(input())
+l=[0]
+for i in range(N):
+    x=list(map(int,input().split()))
+    if(x[0]==1): 
+        l.append(max(x[1],l[-1]))
+    elif(x[0]==2):
+        l.pop()
+    else:
+        print(l[-1])
