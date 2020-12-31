@@ -1,0 +1,53 @@
+You are given Q different queries. Each query consists of one number each i.e. N. You are to write a program that,
+for each query tests whether the number is prime or not. You must output Q different lines to stdout,
+ith line being "yes" if the N for ith query is a prime number and "no" otherwise.
+
+Input Format
+First line contains one integer, the number of queries Q.
+Next Q lines contain one integer each, the N for the queries.
+
+Constraints
+1 <= Q <= 10^6
+1 <= N <= 10^6
+
+Output Format
+Output Q lines, on each line you must print "yes" or "no" depending on the primality of the N in the query.
+
+Sample Input 0
+5
+1
+2
+3
+4
+5
+Sample Output 0
+no
+yes
+yes
+no
+yes
+____________________________________________________________________________________________________________
+n=int(input())
+large=0
+num=[]
+a=[]
+for i in range(n):
+    num.append(int(input()))
+    if(large<num[i]):
+        large=num[i]
+for i in range(large+1):
+    a.append(0)
+a[0]=1
+a[1]=1
+for i in range(2,large+1):
+    if(a[i]==0):
+        j=i+i
+        while(j<=large):
+            a[j]=1
+            j+=i
+for i in range(0,n):
+    if(a[num[i]]==0):
+        print("yes")
+    else:
+        print("no")
+ 
