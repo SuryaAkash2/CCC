@@ -1,0 +1,23 @@
+"""Write a C program to calculate the area of the square where side of the square is given as input.
+Input Format
+--NA--
+Constraints
+1<=Side of square<=1000
+Output Format
+Print the area of square
+
+Sample Input 0
+2
+Sample Output 0
+4"""
+----------------------------------------
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+if __name__ == '__main__':
+    side = int(input())
+    print(side**2)
