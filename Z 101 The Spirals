@@ -1,0 +1,52 @@
+"""
+Write a program to print 1-n^2 in a spiral in a spiral order in a square matrix.
+Input Format
+First line has an integer N.
+
+Constraints
+1 <= N <= 100
+
+Output Format
+Print the square matrix.
+
+Sample Input 0
+4
+Sample Output 0
+1 2 3 4
+12 13 14 5
+11 16 15 6
+10 9 8 7
+
+Sample Input 1
+5
+Sample Output 1
+1 2 3 4 5 
+16 17 18 19 6 
+15 24 25 20 7 
+14 23 22 21 8 
+13 12 11 10 9 
+_________________________________________________"""
+n=int(input())
+lis = [[0 for x in range(n)] for y in range(n)]
+a,l,h=1,0,n-1
+c=int((n+1)/2)
+for i in range(c):
+    for j in range(l,h+1):
+        lis[i][j]=a
+        a+=1
+    for j in range(l+1,h+1):
+        lis[j][h]=a
+        a+=1
+    for j in range(h-1,l-1,-1):
+        lis[h][j]=a
+        a+=1
+    for j in range(h-1,l,-1):
+        lis[j][l]=a
+        a+=1
+    l+=1
+    h-=1
+for i in range(n):
+    for j in range(n):
+        print(lis[i][j],end=" ")
+    print("")
+  
