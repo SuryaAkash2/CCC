@@ -1,0 +1,56 @@
+"""
+Print a spiral pattern according to the following design :
+N = 1
+1
+N = 2
+222
+212
+222
+
+N = 3
+33333
+32223
+32123
+32223
+33333
+Input
+Input consists of a single integer N
+
+Output
+Print the pattern as shown
+
+Sample Input 0
+2
+Sample Output 0
+222
+212
+222
+
+Sample Input 1
+3
+Sample Output 1
+33333
+32223
+32123
+32223
+33333
+__________________________________________________________________"""
+MAX = 100    
+def innerPattern(n):  
+    size=2*n-1
+    f=0
+    b=size-1
+    a = [[0 for i in range(MAX)] for i in range(MAX)] 
+    while (n!=0):  
+        for i in range(f, b+1): 
+            for j in range(f,b+1): 
+                if (i == f or i==b or j==f or j==b): a[i][j] = n 
+        f += 1
+        b -= 1
+        n -= 1
+    for i in range(size):  
+        for j in range(size): 
+            print(a[i][j], end = '') 
+        print()
+innerPattern(int(input())) 
+
