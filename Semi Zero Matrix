@@ -1,0 +1,52 @@
+"""
+A zero matrix is a matrix all of whose elements are zero.
+A semi zero matrix is a matrix obtained from any normal matrix when,
+if any element (i,j) is equal to zero, the entire ith row and jth column is set to zero.
+See sample test case for clarity.
+Your task is, given a matrix of dimensions NxM, find its semi zero matrix.
+
+Input Format
+First line contains N and M, the dimensions of the matrix.
+Next N lines contain M integers each, denoting the elements of the matrix.
+
+Constraints
+1 <= N,M,matrix_elements <= 10
+
+Output Format
+Output a NxM matrix that is a semi zero matrix of the original input matrix.
+
+Sample Input 0
+3 3
+1 0 1
+1 1 1 
+1 1 1
+Sample Output 0
+0 0 0
+1 0 1
+1 0 1
+__________________________________________________________________"""
+def modifyMatrix(mat,R,C): 
+    row = [0] * R  
+    col = [0] * C  
+    for i in range(0, R): row[i] = 1
+    for i in range(0, C) : col[i] = 1
+    for i in range(0, R) : 
+        for j in range(0, C) : 
+            if (mat[i][j] == 0) : 
+                row[i] = 0
+                col[j] = 0
+    for i in range(0, R) : 
+        for j in range(0, C): 
+            if ( row[i] == 0 or col[j] == 0) : 
+                mat[i][j] = 0
+def printMatrix(mat,R,C) : 
+    for i in range(R): 
+        for j in range(C) : 
+            print(mat[i][j], end = " ") 
+        print() 
+R,C = map(int,input().split())
+m=[]
+for i in range(R):
+    m.append(list(map(int,input().strip().split(' ')[0:C])))
+modifyMatrix(m,R,C) 
+printMatrix(m,R,C) 
