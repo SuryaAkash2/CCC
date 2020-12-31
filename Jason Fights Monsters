@@ -1,0 +1,32 @@
+"""
+https://s3.amazonaws.com/hr-assets/0/1497839590-b60dd90b94-Capture.PNG
+
+Input Format
+https://s3.amazonaws.com/hr-assets/0/1497839611-fe635d838f-if.PNG
+
+Constraints
+https://s3.amazonaws.com/hr-assets/0/1497839618-bcf8615a12-ic.PNG
+
+Output Format
+Print an integer denoting the maximum number of monsters Jason can kill in t seconds.
+
+Sample Input 0
+7 8 6
+16 19 7 11 23 8 16
+Sample Output 0
+4
+Explanation 0
+https://s3.amazonaws.com/hr-assets/0/1497839679-981b6925aa-exp.PNG
+
+Thus, we print 4 as the maximum number of monsters we can kill in the given time period.
+_______________________________________________________________________________________________________________________________"""
+m,hit,t = map(int,input().split())
+arr = list(map(int,input().split()))
+h,c=0,0
+arr.sort()
+for i in arr:
+    h=i//hit+(1 if i%hit else 0)
+    if(t>=h):
+        t-=h
+        c+=1
+print(c)
