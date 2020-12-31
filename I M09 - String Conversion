@@ -1,0 +1,35 @@
+"""
+The string "GOTISPATHETIC" is written in a zigzag pattern on a given number of rows like this:
+G---S---H---C-
+-O-I-P-T-E-I--
+--T---A---T---
+And then read line by line: GSHCOIPTEITAT
+Write the code that will take a string and make this conversion given a number of rows.
+
+Input Format
+One string and one integer- the number of rows.
+
+Output Format
+One string
+
+Sample Input 0
+GOTISPATHETIC
+3
+Sample Output 0
+GSHCOIPTEITAT
+______________________________"""
+str=input()
+n=int(input())
+if(n==1): 
+    print(str)      
+else:
+    a=["" for x in range(len(str))] 
+    row = 0
+    for i in range(len(str)): 
+        a[row] += str[i] 
+        if(row==n-1): down=False
+        elif(row==0): down=True
+        if down: row+=1
+        else: row-=1
+for i in a:
+    print(i,end="") 
