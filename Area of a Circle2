@@ -1,0 +1,13 @@
+Given the radius, find and print the area of the circle upto 6 decimal places.
+
+Sample Input 0
+
+5
+Sample Output 0
+
+78.539816
+______________________________
+import math
+radius=int(input())
+area=(math.pi*(radius*radius))
+print("%.6f"%area)
