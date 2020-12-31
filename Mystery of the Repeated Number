@@ -1,0 +1,24 @@
+"""
+Given an array consisting of n elements, every element except one occurs only once. Find out the element that occurs more than once.
+
+Input Format
+First line contains the number N, denoting the size of the array. Next line contains N integers, the array a[N].
+
+Constraints
+1 <= N <= 10000
+1 <= a[i] <= 10000
+
+It is guaranteed that all elements but one occur only once and exactly one element is repeated, i.e. it occurs twice. Print this repeated number.
+
+Output Format
+Print one number, which occurs twice in the array.
+
+Sample Input 0
+5
+2 6 5 4 2
+Sample Output 0
+2
+__________________________________________________________________"""
+n = int(input())
+a = list(map(int,input().strip().split(' ')))
+print(*list(set([x for x in a if a.count(x) > 1])))
