@@ -1,0 +1,27 @@
+"""
+Bunny has a string. Bunny likes vowel and dislikes consonants so he would like to know what percentage of the characters in the string are vowels.
+Input Format
+Only one line of input that contains one string.
+
+Constraints
+One string that only contains lowercase or uppercase letters. The length of this string will not be greater than 100.
+
+Output Format
+Output the required percentage upto 4 decimal places.
+
+Sample Input 0
+bunnyyisastringlover
+Sample Output 0
+30.0000
+Explanation 0
+total characters : 20 vowels : 6 percentage = (6/20)*100 = 30
+__________________________________________________________________"""
+s=input()
+vow,p="aeiouAEIOU",len(s)
+if(len(s)<=100 ):
+    for i in s:
+        if(i==" " or i.isalpha()=="False"): 
+            pass
+        elif i.lower() not in vow:
+            p-=1
+    print("%.4f"%((p*100)/len(s)))
