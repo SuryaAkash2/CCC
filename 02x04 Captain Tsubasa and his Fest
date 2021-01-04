@@ -57,3 +57,16 @@ After pass 8, Player having id=9 posses ball.
 After pass 9, Player having id=99 posses ball.
 After pass 10, Player having id=9 posses ball.
 ________________________________________________________________________________________________________"""
+n=int(input())
+for i in range(n):
+    x,y=map(str, input().split())
+    l=[]
+    l.append(y)
+    for j in range(int(x)):
+        s=input()
+        if s[0]=='P':
+            a,b=s.split()
+            l.append(int(b))
+        else:
+            l.append(l[-2])
+    print("Player "+str(l.pop()))
